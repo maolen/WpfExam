@@ -4,9 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfExam"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="MainWindow" WindowState="Maximized">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\ЖакуповаК\source\repos\WpfExam\WpfExam\wallpaper.jpg"/>
+    </Window.Background>
+    <Grid Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <DataGrid  FontSize="18" Opacity="0.77" IsReadOnly="True" FontFamily="Roboto" Foreground="Navy" Name="dataGrid" Background="#FFF9F9F9">         
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="100"  Header="Имя" Binding="{Binding Name}"/>
+                <DataGridTextColumn Width="100" Header="Рост" Binding="{Binding Height}"/>
+                <DataGridTextColumn Width="100" Header="Вес" Binding="{Binding Mass}"/>
+                <DataGridTextColumn Width="100" Header="Цвет волос" Binding="{Binding HairColor}"/>
+                <DataGridTextColumn Width="100" Header="Цвет кожи" Binding="{Binding SkinColor}"/>
+                <DataGridTextColumn Width="100" Header="Цвет глаз" Binding="{Binding EyeColor}"/>
+                <DataGridTextColumn Width="100" Header="Год рождения" Binding="{Binding BirthYear}"/>
+                <DataGridTextColumn Width="100" Header="Пол" Binding="{Binding Gender}"/>
+                <DataGridTextColumn Width="100" Header="Родная планета" Binding="{Binding Homeworld}"/>
+                <DataGridTextColumn Header="Создан" Binding="{Binding Created}"/>
+                <DataGridTextColumn Header="Изменён" Binding="{Binding Edited}"/>
+                <DataGridTextColumn Header="Url" Binding="{Binding Url}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Name="pageNumber" Text="1" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" Height="18"/>
+        <Label Foreground="White" Content="Введите номер страницы" HorizontalAlignment="Left" Margin="20,5,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.385,0.096" Height="26" Width="150"/>
+        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="230,33,0,0" Grid.Row="1" VerticalAlignment="Top" Height="24" Width="68" Foreground="Black" Background="Yellow" Click="UploadPage"/>
     </Grid>
 </Window>
